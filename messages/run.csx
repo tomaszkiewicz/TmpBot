@@ -1,6 +1,5 @@
 #r "Newtonsoft.Json"
 #load "BasicProactiveEchoDialog.csx"
-#r "bin\CoreLogic.dll"
 
 using System;
 using System.Net;
@@ -15,8 +14,6 @@ using Microsoft.Bot.Connector;
 public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
 {
     log.Info($"Webhook was triggered!");
-
-    string text = (new CoreLogic.Class1()).Get();
 
     // Initialize the azure bot
     using (BotService.Initialize())
