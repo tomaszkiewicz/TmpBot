@@ -38,29 +38,32 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
                 case ActivityTypes.Message:
                     await Conversation.SendAsync(activity, () => new BasicProactiveEchoDialog());
                     break;
+
                 case ActivityTypes.ConversationUpdate:
                     var client = new ConnectorClient(new Uri(activity.ServiceUrl));
+
                     IConversationUpdateActivity update = activity;
+
                     if (update.MembersAdded.Any())
                     {
                         var reply = activity.CreateReply();
                         var newMembers = update.MembersAdded?.Where(t => t.Id != activity.Recipient.Id);
+
                         foreach (var newMember in newMembers)
                         {
                             reply.Text = "Welcome";
 
                             if (!string.IsNullOrEmpty(newMember.Name))
-                            {
                                 reply.Text += $" {newMember.Name}";
-                            }
-                            reply.Text += "!";
 
+                            reply.Text += "!\r\n";
                             reply.Text += (new CoreLogic.Class1()).GetDate();
                             
                             await client.Conversations.ReplyToActivityAsync(reply);
                         }
                     }
                     break;
+
                 case ActivityTypes.Trigger:
                     // handle proactive Message from function
                     log.Info("Trigger start");
@@ -74,6 +77,7 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
                     await client.Conversations.ReplyToActivityAsync(triggerReply);
                     log.Info("Trigger end");
                     break;
+
                 case ActivityTypes.ContactRelationUpdate:
                 case ActivityTypes.Typing:
                 case ActivityTypes.DeleteUserData:
