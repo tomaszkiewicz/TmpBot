@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{33AD0EE8-D99B-4E14-8CD9-3F56ABEF97A2}") = "FunctionApp1", "FunctionApp1\FunctionApp1.funproj", "{4DF90ADA-C15A-4D7E-AC0F-4C78751FE05D}"
+Project("{33AD0EE8-D99B-4E14-8CD9-3F56ABEF97A2}") = "BotFunctions", "FunctionApp1\BotFunctions.funproj", "{4DF90ADA-C15A-4D7E-AC0F-4C78751FE05D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{43585A28-00F3-4089-8C9F-9AE91EB39AA5} = {43585A28-00F3-4089-8C9F-9AE91EB39AA5}
 	EndProjectSection
