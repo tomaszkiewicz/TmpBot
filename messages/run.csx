@@ -1,5 +1,6 @@
 #r "Newtonsoft.Json"
 #load "BasicProactiveEchoDialog.csx"
+#r "bin\CoreLogic.dll"
 
 using System;
 using System.Net;
@@ -47,11 +48,15 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
                         foreach (var newMember in newMembers)
                         {
                             reply.Text = "Welcome";
+
                             if (!string.IsNullOrEmpty(newMember.Name))
                             {
                                 reply.Text += $" {newMember.Name}";
                             }
                             reply.Text += "!";
+
+                            reply.Text += (new CoreLogic.Class1()).GetDate();
+                            
                             await client.Conversations.ReplyToActivityAsync(reply);
                         }
                     }
