@@ -1,1 +1,3 @@
 project.lock.json
+*.user
+.vs
