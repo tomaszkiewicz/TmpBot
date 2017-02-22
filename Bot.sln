@@ -10,7 +10,7 @@ Project("{33AD0EE8-D99B-4E14-8CD9-3F56ABEF97A2}") = "BotFunctions", "BotFunction
 		{FC7731D9-C07B-4265-9601-C7E575A1D4C3} = {FC7731D9-C07B-4265-9601-C7E575A1D4C3}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot Application", "..\Bot Application\Bot Application.csproj", "{A8BA1066-5695-4D71-ABB4-65E5A5E0C3D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot Application", "Bot Application\Bot Application.csproj", "{A8BA1066-5695-4D71-ABB4-65E5A5E0C3D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

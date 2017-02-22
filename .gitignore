@@ -2,4 +2,5 @@ project.lock.json
 *.user
 .vs
 **\obj
+**\bin
 packages
